@@ -1,5 +1,4 @@
 import React from 'react';
-
 import TableRow from './TableRow.jsx';
 
 class TabularFormOfObject extends React.Component {
@@ -9,23 +8,21 @@ class TabularFormOfObject extends React.Component {
   }
   render() {
     let columnTitles = Object.keys(this.props.dataArray[0]);
+    let headCells = columnTitles.map((title,i) => <th key={title+"title"}>{title}</th>);
+    let tableRows = this.props.dataArray.map( (rowEntry,i) => {
+          rowEntry.key = i;
+          return <TableRow {...rowEntry} />
+        })
     return (
       <div>
         <table className="table table-bordered table-striped">
           <thead>
             <tr>
-              { columnTitles.map((title,i) => <th key={title+"title"}>{title}</th>) }
+              {headCells}
             </tr>
           </thead>
           <tbody>
-            {
-              this.props.dataArray.map( (rowEntry,i) => {
-                rowEntry.key = i;
-                return (
-                  <TableRow {...rowEntry} />
-                )
-              })
-            }
+            {tableRows}
           </tbody>
         </table>
       </div>

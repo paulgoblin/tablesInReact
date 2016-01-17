@@ -5,7 +5,7 @@ import TabularFormOfObject from './TabularFormOfObject.jsx';
 
 let data1 = [
   {"domain":"mongodb.info","ip":"82.192.74.35","country":"NL"},
-  {"domain":"udemy.com","ip":"190.93.242.22","country":"CR"},  
+  {"domain":"udemy.com","ip":"190.93.242.22","country":"CR"},
   {"domain":"coursereport.com","ip":"204.236.232.83","country":"US"}
 ];
 
